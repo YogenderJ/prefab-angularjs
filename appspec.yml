@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+        - source: /
+          destination: /home/ubuntu/gitlab/angularjs/
+
+hooks:
+        BeforeInstall:
+                - location: Scripts/BeforeInstall.sh
+                  timeout: 300
+                  runas: root
+        AfterInstall:
+                - location: Scripts/Install.sh
+                  timeout: 600
+                  runas: root
